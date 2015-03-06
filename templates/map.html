@@ -18,17 +18,31 @@
 
     <!-- Custom JS -->
     <script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.transform([0, 0], 'EPSG:4326', 'EPSG:3857'),
-          zoom: 2
-        })
+      $(document).ready(function() {
+	      var map = new ol.Map({
+		target: 'map',
+		layers: [
+		  new ol.layer.Tile({
+		    source: new ol.source.MapQuest({layer: 'sat'})
+		  })
+		],
+		view: new ol.View({
+		  center: ol.proj.transform([0, 0], 'EPSG:4326', 'EPSG:3857'),
+		  zoom: 2
+		})
+	      });
+	      resizeMap();
       });
-    </script>
+	function resizeMap() {
+		var canvasheight=$('#map').parent().css('height');
+		var canvaswidth=$('#map').parent().css('width');
+		$('#map').css("height", canvasheight);
+		$('#map').css("width", canvaswidth);
+
+	}
+        window.onresize = function()
+	{
+		resizeMap();
+	}
+</script>
 {% endblock js %}

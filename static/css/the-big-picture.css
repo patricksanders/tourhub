@@ -4,11 +4,13 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+html, body {
   margin-bottom: 50px;
   background: #AAAAAA;
+  height: 100%;
 }
 
 .map {
-
+    height= 100%;
 }
+
