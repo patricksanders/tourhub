@@ -10,7 +10,8 @@ def get_mbid(artist_name):
     url = "".join( [url_base, res_id] )
     r = client.get(url, params=query)
     j = json.loads(r.text)
-    return j['artists']['artist']
-
+    j = j['artists']['artist']
+    j = { element['@name'] : element['@mbid'] for element in j }
+    return j
 
     
