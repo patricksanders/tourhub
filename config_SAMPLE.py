@@ -1,5 +1,6 @@
 SETLIST_API_KEY = "setlist_api_key_goes_here"
-SPOTIFY_API_KEY = "spotify_api_key_goes_here"
+SPOTIFY_CLIENT_ID = "spotify_client_id_goes_here"
+SPOTIFY_CLIENT_SECRET = "spotify_client_secret_goes_here"
 ECHONEST_API_KEY = "echonest_api_key_goes_here"
 ECHONEST_CONSUMER_KEY = "echonest_consumer_key_goes_here"
 ECHONEST_SHARED_SECRET = "echonest_shared_secret_goes_here"
