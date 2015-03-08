@@ -6,8 +6,10 @@
 
 html, body {
   margin-bottom: 50px;
+  padding-bottom: 50px;
   background: #AAAAAA;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .map {
