@@ -18,5 +18,5 @@ def test_spotify_find_ids():
     }
 
     ids = spotify.find_setlist_tracks(sample_setlist)
-    assert ids is not None
+    assert 'spotify:track:14wjwPgJCxk9uOfJMNVUwT' in ids
 
