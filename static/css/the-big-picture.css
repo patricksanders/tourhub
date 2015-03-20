@@ -12,6 +12,13 @@ html, body {
   box-sizing: border-box;
 }
 
+@media (max-width: 978px) {
+    .col-md-4 {
+        position: relative;
+        margin: 100px;
+    }
+}
+
 .search_bar {
     position: fixed;
     z-index: 2;
