@@ -1,7 +1,4 @@
-import requests
-import json
 import spotipy
-from urllib import urlencode
 
 sp = spotipy.Spotify()
 
