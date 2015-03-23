@@ -1,9 +1,9 @@
 import requests
 import json
+import spotipy
 from urllib import urlencode
 
-url_base = "https://api.spotify.com/v1/"
-client = requests.session()
+sp = spotipy.Spotify()
 
 # Search Spotify and make list of URIs for a setlist.
 # Expects dict of form:
@@ -35,12 +35,6 @@ def search_track(artist_name, track_name):
 # search_type: album, artist, track, or playlist
 # limit: a number
 def search(term, search_type, limit=10):
-    query = urlencode({"q": term,
-             "type": search_type,
-             "limit": limit})
-    res_id = "search"
-    url = "".join( [url_base, res_id] )
-    r = client.get(url, params=query)
-    j = json.loads(r.text)
+    j = sp.search(q=term, type=search_type, limit=limit)
     return j
 
