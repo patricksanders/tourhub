@@ -30,14 +30,14 @@ def get_setlists(mbid):
     page = 1
     j = json.loads('[]')
     while not finished:
-        setlists, finished = setlist_query(mbid, page)
+        setlists, finished = _setlist_query(mbid, page)
         
         j.append(setlists)
         page += 1
 
     return j
 
-def setlist_query(mbid, page):
+def _setlist_query(mbid, page):
     res_id = "artist/" + mbid  + "/setlists.json?p=" + str(page)
     url = "".join( [url_base, res_id] )
     r = client.get(url)
