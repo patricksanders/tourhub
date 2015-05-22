@@ -1,11 +1,17 @@
 import requests
 import json
 import math
+import difflib
 
 url_base = "http://api.setlist.fm/rest/0.1/"
 client = requests.session()
 
-def get_mbid(artist_name):
+"""
+So, this says get_mbid, like a single mbid, so I think we 
+should cleanse this and return the closest mbid to it, if 
+something is set as such.
+"""
+def get_mbid(artist_name, closest=False):
     query = {"artistName":artist_name}
     res_id="search/artists.json"
     url = "".join( [url_base, res_id] )
@@ -13,6 +19,10 @@ def get_mbid(artist_name):
     j = json.loads(r.text)
     j = j['artists']['artist']
     j = { element['@name'] : element['@mbid'] for element in j }
+    if match is True:
+        matches = j.keys()
+        closest = difflib.get_close_matches(artist_name, matches, 1)[0]
+        j = j[closest]
     return j
 
 def get_setlists(mbid):
