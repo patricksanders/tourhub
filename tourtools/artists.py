@@ -11,7 +11,7 @@ So, this says get_mbid, like a single mbid, so I think we
 should cleanse this and return the closest mbid to it, if 
 something is set as such.
 """
-def get_mbid(artist_name, closest=False):
+def get_mbid(artist_name, match=False):
     query = {"artistName":artist_name}
     res_id="search/artists.json"
     url = "".join( [url_base, res_id] )
